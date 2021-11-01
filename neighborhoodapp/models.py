@@ -2,6 +2,7 @@ from os import name
 from django.db import models
 from django.db.models import ImageField
 from django.contrib.auth.models import User
+from django.db.models.base import Model
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 # Create your models here.
@@ -44,3 +45,12 @@ class Profile(models.Model):
     @receiver(post_save,sender=User)
     def save_user_profile(sender,instance,**kwargs):
         instance.profile.save()
+
+class Business(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.EmailField(max_length=254)
+    description = models.TextField(blank=True)
+    neighbourhood = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, related_name='business')
+    user = models.ForeignKey(Profile,on_delete=models.CASCADE,related_name='owner')
+
+    
