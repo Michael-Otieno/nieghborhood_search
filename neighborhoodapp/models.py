@@ -12,4 +12,8 @@ class NeighbourHood(models.Model):
     police_number = models.IntegerField(null=True,blank=True)
     family_count = models.IntegerField(null=True,blank=True)
 
+    def __str__(self):
+        return f'{self.name} hood'
 
+    def create_neighborhood(self):
+        self.save()
