@@ -58,5 +58,13 @@ class Business(models.Model):
 
     def create_business(self):
         self.save()
+    
+    def delete_business(self):
+        self.delete()
+
+    @classmethod
+    def search_business(cls, name):
+        return cls.objects.filter(name_icontains=name).all()
+        
 
     
