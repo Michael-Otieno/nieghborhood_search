@@ -9,10 +9,15 @@ from pyuploadcare.dj.forms import ImageField
 class SignupForm(UserCreationForm):
     email=forms.EmailField(max_length=254, help_text='Requred.Inform a valid email address')
     class Meta:
-        models=User
+        model=User
         fields=('username','email','password1','password2')
 
 class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model=Profile
         exclude=('user', 'neighbourhood')
+
+class NeighbourHoodForm(forms.ModelForm):
+    class Meta:
+        model=NeighbourHood
+        exclude=('admin',)
