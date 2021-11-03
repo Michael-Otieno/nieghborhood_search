@@ -62,6 +62,7 @@ span {
 .wrapper {
     display: flex;
     align-items: stretch;
+    
 }
 .tt{
     color:#1a3e59;
@@ -78,7 +79,7 @@ span {
     min-width: 250px;
     max-width: 250px;
     padding-right:10px;
-    background: #1a3e59;
+    background: #46abf8;
     color: #fff;
     position: -webkit-sticky;
     position: sticky;
