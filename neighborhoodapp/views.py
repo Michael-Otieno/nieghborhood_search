@@ -24,7 +24,7 @@ def signup(request):
             return redirect('index')
     else:
         form=SignupForm()
-    return render(request,'registration.html', {'form':form})
+    return render(request,'registration/signup.html', {'form':form})
 
 def hoods(request):
     all_hoods = NeighbourHood.objects.all()
