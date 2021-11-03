@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
+    <p class="lead text-light">Find your prefered hood and join.</p>
+    <p class="lead text-light">Find your hood and checkout businesses, health and police  contacts.</p>
         <a href="{% url 'new-hood' %}" class="btn btn-sm btn-info mb-2"> New Hood</a>
     <div class="row">
         {% for hood in all_hoods %}
